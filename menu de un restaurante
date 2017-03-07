@@ -1,0 +1,50 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+void main()
+{
+	int opcion,cont1,cont2,cont3,cont4,cont5,total=0;
+	do
+	{
+		cout<<"      MENU      "<<endl;
+	    cout<<" [1] hamburguesas (3bs) "<<endl;
+	    cout<<" [2] hamburguesas con queso (5bs) "<<endl;
+	    cout<<" [3] papas fritas (2bs) "<<endl;
+	    cout<<"[4]   TOTAL"<<endl;
+		cout<<"elija una opcion:   "<<endl;
+	    cin>>opcion;
+	    switch (opcion)
+		{
+		case 1:
+			{
+				cout<<"Cuantas hamburguesas desea? "<<endl;
+				cin>>cont1;
+				total=(total+(cont1*3));
+				break;
+			}
+		case 2:
+			{
+				cout<<"Cuantas hamburguesas con queso desea?"<<endl;
+				cin>>cont2;
+				total=(total+(cont2*5));
+				break;
+			}
+		case 3:
+			{
+				cout<<"Cuantas porciones de papas desea?"<<endl;
+				cin>>cont3;
+				total=(total+(cont3*2));
+				break;
+			}
+		
+
+		}
+	}
+	while (opcion!=4);
+
+	cout<<" su total es: "<<total;
+	getch();
+}
