@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main()
+{
+	float A,B,C,Xa,Xb,determinante;
+	cout<<"Ingrese el valor de A:  ";
+	cin>>A;
+	cout<<"Ingrese el valor de B:  ";
+	cin>>B;
+	cout<<"Ingrese el valor de C:  ";
+	cin>>C;
+	determinante= ((B*B)-(4*A*C));
+	if (determinante<0)
+		cout<<"La solucion es imaginaria";
+	else
+	{
+		Xa= ((-B)+ sqrt((B*B)-(4*A*C)))/(2*A);
+		Xb= ((-B)- sqrt((B*B)-(4*A*C)))/(2*A);
+	}
+	cout<<"El valor de Xa es: "<<Xa<<endl;
+	cout<<"El valor de Xb es: "<<Xb;
+
+	getch();
+}
