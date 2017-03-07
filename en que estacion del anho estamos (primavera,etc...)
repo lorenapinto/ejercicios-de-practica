@@ -1,0 +1,52 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+void main()
+{
+	int dia,mes;
+	cout<<"Ingrese el mes en numero: ";
+	cin>>mes;
+	cout<<"Ingrese el dia: ";
+	cin>>dia;
+	if (mes==10 || mes==11)
+		cout<<"ES PRIMAVERA";
+	if (mes==1 || mes==2)
+		cout<<"ES VERANO";
+	if (mes==4 || mes==5)
+		cout<<"ES OTONHO";
+	if (mes==7 || mes==8)
+		cout<<"ES INVIERNO";
+	if (mes==12)
+	{
+		if(dia<21)
+			cout<<"ES PRIMAVERA";
+		else
+			cout<<"ES VERANO";
+	}
+	if (mes==3)
+	{
+		if(dia<21)
+			cout<<"ES VERANO";
+		else
+			cout<<"ES OTONHO";
+	}
+	if (mes==6)
+	{
+		if(dia<21)
+			cout<<"ES OTONHO";
+		else
+			cout<<"ES INVIERNO";
+	}
+	if (mes==9)
+	{
+		if(dia<21)
+			cout<<"ES INVIERNO";
+		else
+			cout<<"ES PRIMAVERA";
+	}
+
+	getch();
+}
