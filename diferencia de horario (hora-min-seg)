@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+void main()
+{
+	int hora1,min1,seg1,hora2,min2,seg2,total1,total2,diferencia,horadif,mindif,segdif;
+	cout<<"PRIMERO INGRESARA EL PRIMER HORARIO"<<endl;
+	cout<<"Ingrese la hora:  "<<endl;
+	cin>>hora1;
+	cout<<"Ingrese los minutos:  "<<endl;
+	cin>>min1;
+	cout<<"Ingrese los segundos:  "<<endl;
+	cin>>seg1;
+	cout<<"AHORA INGRESARA EL SEGUNDO HORARIO"<<endl;
+	cout<<"Ingrese la hora:  "<<endl;
+	cin>>hora2;
+	cout<<"Ingrese los minutos:  "<<endl;
+	cin>>min2;
+	cout<<"Ingrese los segundos:  "<<endl;
+	cin>>seg2;
+	hora1=hora1*3600;
+	hora2=hora2*3600;
+	min1=min1*60;
+	min2=min2*60;
+	total1=(hora1+min1+seg1);
+	total2=(hora2+min2+seg2);
+	if (total1>total2)
+		diferencia=total1-total2;
+	else
+		diferencia=total2-total1;
+	horadif=diferencia/3600;
+	mindif=(diferencia%3600)/60;
+	segdif=(diferencia%3600)%60;
+	cout<<"La diferencia del horario es:"<<endl;
+	cout<<"hora: "<<horadif<<endl;
+	cout<<"minuto: "<<mindif<<endl;
+	cout<<"segundo: "<<segdif<<endl;
+
+	getch();
+}
