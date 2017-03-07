@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+void main()
+{
+	int entero,uni,dec,cent,unimil,co1,co2,co3,co4;
+	do
+	{
+		cout<<"Ingrese un numero natural menor a 10 000:  ";
+		cin>>entero;
+		if (entero>10000)
+			cout<<"Su numero debe ser menor a 10000, ingresar nuevamente"<<endl;
+	}
+	while (entero>10000);
+
+	co1=entero/10;
+	uni=entero%10;
+	co2=co1/10;
+	dec=co1%10;
+	co3=co2/10;
+	cent=co2%10;
+	co4=co3/10;
+	unimil=co3%10;
+
+	cout<<"Digito de unidades: "<<uni<<endl;
+	cout<<"Digito de decenas: "<<dec<<endl;
+	cout<<"Digito de centenas: "<<cent<<endl;
+	cout<<"Digito de unidades de millon: "<<unimil<<endl;
+
+	getch();
+
+}
