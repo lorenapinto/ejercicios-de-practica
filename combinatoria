@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+
+using namespace std;
+int factorial (int a);
+float combinatoria (int numero1, int numero2);
+void main()
+{
+	int numero1,numero2,resultado;
+	do
+	{
+	cout<<"Ingrese el valor del primero numero: ";
+	cin>>numero1;
+	cout<<"Ingrese el valor del segundo numero: ";
+	cin>>numero2;
+	if (numero1<numero2)
+		cout<<"Vuelva a ingresar sus numeros. el primer ingresado debe ser mayor al segundo"<<endl;
+	}
+	while (numero1<numero2);
+	
+	resultado= combinatoria (numero1,numero2);
+	cout<<"El resultado es: "<<resultado;
+	getch();
+}
+
+
+
+int factorial (int a)
+{ 
+	int fact=1,cont;
+	for(cont=1;cont<=a;cont++)
+	{
+		fact=fact*cont;
+	}
+	return (fact);
+}
+
+
+
+float combinatoria (int numero1,int numero2)
+{
+	float total;
+	total= ((factorial (numero1)) / ((factorial (numero2))*(factorial (numero1-numero2))));
+	return (total);
+}
