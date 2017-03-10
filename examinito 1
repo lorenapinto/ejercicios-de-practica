@@ -1,0 +1,115 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+
+using namespace std;
+float resolucioncubo (float a);
+void potenraiz (float pi);
+void dsctsalario (int a);
+
+void main ()
+{
+	int opcion,salario;
+	float lado,cubo,pi=3.1416;
+	do
+	{
+		cout<<"    MENU   "<<endl;
+		cout<<" [1] Cubo  "<<endl;
+		cout<<"[2] Potencia y Raiz"<<endl;
+		cout<<"[3] Dscto y Sueldo Neto"<<endl;
+		cout<<"[0] Salir  "<<endl; 
+		cout<<"           "<<endl;
+		cin>>opcion;
+	
+	    switch (opcion)
+	    {
+	    case 1:
+		    {
+			  cout<<"Ingrese el lado del cubo:  ";
+			  cin>>lado;
+			  cubo= resolucioncubo (lado);
+			  cout<<"El resultado es:  "<<cubo<<endl;
+			  break;
+		    }
+	    case 2:
+		    {
+			  potenraiz (pi);
+			  break;
+		    }
+		case 3:
+			{
+				cout<<"Ingrese su salario: ";
+				cin>>salario;
+				dsctsalario (salario);
+				break;
+			}
+		case 0:
+			{
+				cout<<"Saliendo del programa"<<endl;
+				break;
+			}
+		default:
+			{
+				cout<<"Opcion invalida vuelva a introducir"<<endl;
+			}
+
+	    }
+
+    }
+	while (opcion=0 && opcion<=3);
+
+
+
+	getch();
+}
+
+float resolucioncubo (float a)
+{
+	float total;
+	total=a*a*a;
+	return (total);
+}
+
+
+void potenraiz (float pi)
+{
+	int cont;
+	float poten=pi,raiz;
+	for (cont=2;cont<=10;cont++)
+	{
+		poten=poten*pi;
+		raiz= sqrt (poten);
+		cout<<" potencia= "<<poten<<endl;
+		cout<<" raiz= "<<raiz<<endl;
+	}
+	
+}
+
+void dsctsalario (int a)
+{
+	float descuento,sueldoneto;
+	if (a<=1000)
+	{
+		descuento=a*0.10;
+		sueldoneto=a-descuento;
+		cout<<"El descuento es de: "<<descuento<<endl;
+		cout<<"El sueldo neto es igual a: "<<sueldoneto<<endl;
+	}
+	if (a>1000 && a<=2000)
+	{
+		descuento=a*0.15;
+		sueldoneto=a-descuento;
+		cout<<"El descuento es de: "<<descuento<<endl;
+		cout<<"El sueldo neto es igual a: "<<sueldoneto<<endl;
+	}
+	if (a>2000)
+	{
+		descuento=a*0.18;
+		sueldoneto=a-descuento;
+		cout<<"El descuento es de: "<<descuento<<endl;
+		cout<<"El sueldo neto es igual a: "<<sueldoneto<<endl;
+	}
+}
