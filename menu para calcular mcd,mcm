@@ -1,0 +1,106 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+
+using namespace std;
+int numeromenor (int a, int b);
+int calculomcd  (int a, int b, int c);
+int calculomcm (int a, int b, int c);
+
+void main()
+{
+	int opcion,numero1,numero2,menornum,mcd,mcm;
+	do
+	{
+		cout<<" -------------------------"<<endl;
+		cout<<"             MENU         "<<endl;
+	    cout<<"[1] Calcular el menor numero "<<endl;
+	    cout<<"[2] Calcular el MCD "<<endl;
+		cout<<"[3] Calcular el mcm "<<endl;
+	    cout<<"[0] SALIR  "<<endl;
+		cout<<"--------------------------- "<<endl;
+		cout<<"Ingrese su opcion:  ";
+		cin>>opcion;
+		switch (opcion)
+		{
+		case 1:
+			{
+				cout<<"Escriba el valor de su primer numero:  ";
+				cin>>numero1;
+				cout<<"Escriba el valor de su segundo numero:  ";
+				cin>>numero2;
+				menornum= numeromenor (numero1,numero2);
+				cout<<"El numero menor es:  "<<menornum<<endl;
+				break;
+			}
+		case 2:
+			{
+				cout<<"Escriba el valor de su primer numero:  ";
+				cin>>numero1;
+				cout<<"Escriba el valor de su segundo numero:  ";
+				cin>>numero2;
+				menornum= numeromenor (numero1,numero2);
+				mcd= calculomcd (menornum,numero1,numero2);
+				cout<<"El mcd de los numeros es: "<<mcd<<endl;
+				break;
+			}
+		case 3:
+			{
+				cout<<"Escriba el valor de su primer numero:  ";
+				cin>>numero1;
+				cout<<"Escriba el valor de su segundo numero:  ";
+				cin>>numero2;
+				menornum= numeromenor (numero1,numero2);
+				mcd= calculomcd (menornum,numero1,numero2);
+				mcm= calculomcm (numero1,numero2,mcd);
+				cout<<"El mcm de los numeros es: "<<mcm<<endl;
+				break;
+			}
+		case 0:
+			{
+				cout<<"SALIR DEL PROGRAMA -> presione enter "<<endl;
+				break;
+			}
+		default:
+			{
+				cout<<"Valor no correcto, ingrese otra opcion"<<endl;
+				break;
+			}
+		}
+	}
+	while (opcion>0 && opcion<=3);
+	getch();
+	
+}
+
+int numeromenor (int a, int b)
+{
+	int menor;
+	if (a<b)
+		menor=a;
+	else
+		menor=b;
+	return (menor);
+}
+
+
+int calculomcd  (int a,int b, int c)
+{
+	int cont,mcd=1;
+	for (cont=1;cont<=a;cont++)
+	{
+		if (b%cont==0 && c%cont==0)
+			mcd=cont;
+	}
+	return (mcd);
+}
+
+
+int calculomcm (int a, int b, int c)
+{
+	int mcm;
+	mcm= (a*b)/c;
+	return (mcm);
+}
